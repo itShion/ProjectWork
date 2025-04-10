@@ -1,101 +1,54 @@
-/* Reset + Base Styles */
 body {
-    font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    background: #f8f8f8;
-    color: #000;
-    line-height: 1.6;
+
+    display: grid;
+    grid-template-areas:
+        "nav nav nav"
+        "main main main"
+        "componenti componenti componenti"
+        "feats feats feats";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 5fr; /* Questa linea è OPZIONALE */
 }
 
-/* Overlay Navigation (Hidden) */
-#nav-overlay {
-    position: fixed;
+#navigation {
+    grid-area: nav;
+    background-color: wheat;
+    min-height: 5vh;
+}
+
+#Main {
+    grid-area: main;
+    padding: 20px;
+    height: 95vh;
+}
+
+/* #TODO explain what myVideo css does. */
+
+#myVideo {
+    grid-area: main;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
+    height: 120%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6);
 }
 
-#nav-overlay a {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    margin: 10px 0;
-    opacity: 0.7;
-    transition: opacity 0.3s;
+
+#componentiGruppo {
+    grid-area: componenti;
+    background-color: whitesmoke;
+    padding: 20px;
+    height: 95vh;
 }
 
-#nav-overlay a:hover {
-    opacity: 1;
-}
-
-/* Menu Button */
-#menu-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    background: none;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-/* Hero Section */
-.hero {
-    padding: 20vh 20px;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    max-width: 800px;
-    margin: 0 auto 20px;
-}
-
-.hero p {
-    font-size: 1rem;
-    opacity: 0.6;
-}
-
-/* Projects Grid */
-.projects {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.projects h2 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.project-item {
-    height: 400px;
-    background: #e0e0e0;
-    transition: transform 0.3s;
-}
-
-.project-item:hover {
-    transform: scale(0.98);
+#features {
+    grid-area: feats;
+    background-color: blueviolet;
+    padding: 20px;
+    height : 95vh;
 }
