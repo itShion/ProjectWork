@@ -12,17 +12,96 @@ body {
     grid-template-columns: 1fr 5fr; /* Questa linea è OPZIONALE */
 }
 
+
 #navigation {
     grid-area: nav;
-    background-color: wheat;
-    min-height: 5vh;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.10em;
+    font-size: 14px;
+    padding: 20px 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navigation ul {  
+    background: rgba(155, 155, 155, 0.09); /* Grigio con opacità 20% */
+    backdrop-filter: blur(10px); /* Effetto vetro */
+    display: inline-flex;
+    border-radius: 55px;  
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#navigation li {
+    display: inline-block;
+    margin: 20px 60px;
+    transition: all 0.3s;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: rgb(230, 230, 230);
+}
+
+#navigation li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    outline: 20px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+}
+
+.nav-cta {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 55px;
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.nav-cta:hover {
+    background: rgba(20, 20, 20, 0.2);
+}
+
+.nav-brand {
+    text-decoration: none;
 }
 
 #Main {
     grid-area: main;
     padding: 20px;
     height: 95vh;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
 }
+
+.Welcome{
+    margin: 25vh;
+    color: rgb(222, 222, 222);
+}
+
+.main-title {
+    font-size: clamp(24px, 6vw, 60px);
+    letter-spacing: 5px;
+}
+
+.subtitle {
+    margin-top: -0.3em;
+    margin-left: 9vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(48px, 10vw, 120px);
+    font-weight: 600;
+    letter-spacing: 8vh;
+    text-transform: uppercase;
+
+    text-align: center;
+}
+
 
 /* #TODO explain what myVideo css does. */
 
@@ -35,7 +114,7 @@ body {
     height: 120%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(0.6);
+    filter: brightness(0.4);
 }
 
 
