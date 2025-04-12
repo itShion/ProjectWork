@@ -1,7 +1,8 @@
+/* Stili uguali per tutti i dispositivi */
+
 body {
     margin: 0;
     padding: 0;
-
     display: grid;
     grid-template-areas:
         "nav nav nav"
@@ -12,14 +13,11 @@ body {
     grid-template-columns: 1fr 5fr; /* Questa linea è OPZIONALE */
 }
 
-
 #navigation {
     grid-area: nav;
     text-align: center;
     font-family: 'Inter', sans-serif;
     letter-spacing: 0.10em;
-    font-size: 14px;
-    padding: 20px 16px;
     display: flex;
     justify-content: space-between;
 }
@@ -33,13 +31,12 @@ body {
     margin: 0;
     padding: 0;
 }
-
+ 
 #navigation li {
     display: inline-block;
-    margin: 20px 60px;
     transition: all 0.3s;
 }
-
+    
 #navigation a {
     text-decoration: none;
     color: rgb(230, 230, 230);
@@ -55,10 +52,8 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 55px;
-    padding: 20px 30px;
     color: white;
     text-decoration: none;
-    font-size: 14px;
     transition: all 0.3s;
 }
 
@@ -69,40 +64,36 @@ body {
 .nav-brand {
     text-decoration: none;
 }
-
+    
 #Main {
     grid-area: main;
-    padding: 20px;
-    height: 95vh;
     align-items: center;
     text-align: center;
     flex-direction: column;
     background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
 }
 
-.Welcome{
-    margin: 25vh;
-    color: rgb(222, 222, 222);
-}
-
 .main-title {
     font-size: clamp(24px, 6vw, 60px);
     letter-spacing: 5px;
 }
-
+  
+.Welcome{
+    
+    color: rgb(222, 222, 222);
+}
+  
 .subtitle {
-    margin-top: -0.3em;
+    margin-top: -0.5em;
     margin-left: 9vh;
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(48px, 10vw, 120px);
     font-weight: 600;
     letter-spacing: 8vh;
     text-transform: uppercase;
-
     text-align: center;
 }
-
-
+      
 /* #TODO explain what myVideo css does. */
 
 #myVideo {
@@ -110,24 +101,62 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 120%;
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.4);
 }
 
-
 #componentiGruppo {
     grid-area: componenti;
     background-color: whitesmoke;
-    padding: 20px;
-    height: 95vh;
 }
 
 #features {
     grid-area: feats;
     background-color: blueviolet;
-    padding: 20px;
-    height : 95vh;
+}
+
+@media screen and (min-width: 1024px){
+
+    #navigation {
+        font-size: 14px;
+        padding: 20px 16px;
+    }
+    
+    #navigation li {
+        margin: 20px 60px;
+    }
+
+    #navigation li:hover {
+        outline: 20px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .nav-cta {
+        padding: 20px 30px;
+        font-size: 14px;
+    }
+
+    #Main {
+        padding: 20px;
+        height: 95vh;
+    }
+
+    .Welcome{
+        margin: 25vh;
+    }
+
+    #myVideo {
+        width: 100%;
+        height: 120%;
+    }
+    
+    #componentiGruppo {
+        padding: 20px;
+        height: 110vh;
+    }
+    
+    #features {
+        padding: 20px;
+        height : 100vh;
+    }
 }
