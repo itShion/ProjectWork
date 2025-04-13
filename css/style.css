@@ -120,10 +120,53 @@ body {
 
 #componentiGruppo {
     grid-area: componenti;
-    background-color: whitesmoke;
-    padding: 20px;
-    height: 95vh;
+    background: linear-gradient(whitesmoke);
 }
+
+header {
+    text-align: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.10em;
+    background-color: lightgrey;
+    color: #424242
+}
+
+.ComponentiSlider {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    padding: 2rem;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items: center;
+    border: 2px solid #8106be;
+    background-color: #424242;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    border-radius: 2rem;
+    padding: 3rem;
+    margin-bottom: 5.5rem;
+}
+
+figure > img {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    border: 1px dashed #8106be;
+    background-color: #8106be;
+    object-fit: cover;
+    padding: 3px;
+    justify-content: space-between;
+}
+
 
 #features {
     grid-area: feats;
