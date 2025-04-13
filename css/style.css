@@ -160,3 +160,76 @@ body {
         height : 100vh;
     }
 }
+
+/* ------------------------------------features CSS-----------------------------------------------------*/
+/*WORKING ONNNNE
+/* Features Section - Targeted Hover Effects */
+#features {
+    grid-area: feats;
+    background-color: rgb(150, 194, 190);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-grid {
+    display: grid;
+    place-items: center;
+    width: 300px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+/* Key change: Only affect siblings when a specific grid is hovered */
+.feature-grid:hover ~ .feature-grid,  /* Targets grids after the hovered one */
+.feature-grid:has(~ .feature-grid:hover) {  /* Targets grids before the hovered one */
+    opacity: 0.1;
+    transform: scale(0.2);
+    filter: blur(10px);
+}
+
+/* Hovered grid styles */
+.feature-grid:hover {
+    width: 70%;
+    height: 80%;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    #features {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .feature-grid {
+        width: 80%;
+        height: 200px;
+    }
+    
+    .feature-grid:hover ~ .feature-grid,
+    .feature-grid:has(~ .feature-grid:hover) {
+        opacity: 0.5;
+        transform: scale(0.95);
+        filter: blur(0.5px);
+    }
+    
+    .feature-grid:hover {
+        transform: scale(1.1);
+    }
+}
