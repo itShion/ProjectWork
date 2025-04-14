@@ -4,13 +4,11 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-areas:
-        "nav nav nav"
-        "main main main"
-        "componenti componenti componenti"
-        "feats feats feats";
+    
+
     grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr 5fr; /* Questa linea è OPZIONALE */
+
+
 }
 
 #navigation {
@@ -71,6 +69,8 @@ body {
     text-align: center;
     flex-direction: column;
     background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
+    width: 86.8vh;
+    height: 184.5%;
 }
 
 .main-title {
@@ -109,6 +109,7 @@ body {
 #componentiGruppo {
     grid-area: componenti;
     background-color: whitesmoke;
+    height: 100vh;
 }
 
 #features {
@@ -116,7 +117,28 @@ body {
     background-color: blueviolet;
 }
 
+
+@media screen and (max-width: 320px){
+    body{
+        grid-template-areas:
+        "nav nav nav"
+        "main main main"
+        "componenti componenti componenti"
+        "componenti componenti componenti"
+        "feats feats feats";
+    }
+    
+}
 @media screen and (min-width: 1024px){
+
+
+    body{
+        grid-template-areas:
+        "nav nav nav"
+        "main main main"
+        "componenti componenti componenti"
+        "feats feats feats";
+    }
 
     #navigation {
         font-size: 14px;
@@ -137,6 +159,7 @@ body {
     }
 
     #Main {
+        width: auto;
         padding: 20px;
         height: 95vh;
     }
