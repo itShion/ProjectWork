@@ -121,6 +121,7 @@ body {
 #componentiGruppo {
     grid-area: componenti;
     background: linear-gradient(whitesmoke);
+    height: 60rem;
 }
 
 header {
@@ -140,6 +141,7 @@ header {
     margin-inline-start: 40px;
     margin-inline-end: 40px;
     padding: 2rem;
+    height: 45rem;
 }
 
 figure {
@@ -154,6 +156,7 @@ figure {
     border-radius: 2rem;
     padding: 3rem;
     margin-bottom: 5.5rem;
+    width: 20rem;
 }
 
 figure > img {
