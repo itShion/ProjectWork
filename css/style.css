@@ -1,185 +1,235 @@
-/* Stili uguali per tutti i dispositivi */
+/* ===== Per rimuovere gli spazi di default ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    display: grid;
-    
-
-    grid-template-rows: auto 1fr auto;
-
-
-}
-
-#navigation {
-    grid-area: nav;
-    text-align: center;
     font-family: 'Inter', sans-serif;
-    letter-spacing: 0.10em;
-    display: flex;
-    justify-content: space-between;
-}
-
-#navigation ul {  
-    background: rgba(155, 155, 155, 0.09); /* Grigio con opacità 20% */
-    backdrop-filter: blur(10px); /* Effetto vetro */
-    display: inline-flex;
-    border-radius: 55px;  
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
- 
-#navigation li {
-    display: inline-block;
-    transition: all 0.3s;
-}
-    
-#navigation a {
-    text-decoration: none;
     color: rgb(230, 230, 230);
+    min-height: 100vh;
 }
 
-#navigation li:hover {
-    background: rgba(255, 255, 255, 0.2);
-    outline: 20px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-}
-
-.nav-cta {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 55px;
-    color: white;
-    text-decoration: none;
-    transition: all 0.3s;
-}
-
-.nav-cta:hover {
-    background: rgba(20, 20, 20, 0.2);
-}
-
-.nav-brand {
-    text-decoration: none;
-}
-    
-#Main {
-    grid-area: main;
-    align-items: center;
-    text-align: center;
-    flex-direction: column;
-    background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
-    width: 86.8vh;
-    height: 184.5%;
-}
-
-.main-title {
-    font-size: clamp(24px, 6vw, 60px);
-    letter-spacing: 5px;
-}
-  
-.Welcome{
-    
-    color: rgb(222, 222, 222);
-}
-  
-.subtitle {
-    margin-top: -0.5em;
-    margin-left: 9vh;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(48px, 10vw, 120px);
-    font-weight: 600;
-    letter-spacing: 8vh;
-    text-transform: uppercase;
-    text-align: center;
-}
-      
-/* #TODO explain what myVideo css does. */
-
-#myVideo {
-    grid-area: main;
-    position: absolute;
+/* ===== VIDEO BACKGROUND ===== */
+#video-container {
+    position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+
+#myVideo {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: -1;
     filter: brightness(0.4);
 }
 
-#componentiGruppo {
-    grid-area: componenti;
-    background-color: whitesmoke;
+/* ===== NAVIGATION MOBILE  ===== */
+#navigation {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: transparent;
+}
+
+.nav-brand {
+    width: 60px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.nav-brand:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.mobile-menu-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.mobile-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Navigation Links */
+#navigation ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(155, 155, 155, 0.15);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    list-style: none;
+    padding: 15px 0;
+    text-align: center;
+}
+
+#navigation li {
+    padding: 12px 0;
+    transition: all 0.3s;
+}
+
+#navigation li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 5px 15px;
+}
+
+.nav-cta {
+    display: none;
+}
+
+/* ===== MAIN CONTENT ===== */
+#Main {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
+.Welcome {
+    color: rgb(227, 227, 227);
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: clamp(24px, 5vw, 48px);
+    letter-spacing: 3px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(36px, 10vw, 96px);
+    font-weight: 600;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-left: 0.25em;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== COMPONENTI GRUPPO ===== */
+#componentiGruppo {
+    background-color: whitesmoke;
+    padding: 40px 20px;
+    color: #e2e2e2;
+    position: relative;
+}
+
+#componentiGruppo h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: clamp(24px, 3vw, 36px);
+    color: #222;
+}
+
+/* ===== Roba di Mamin ===== */
 #features {
-    grid-area: feats;
+    padding: 60px 20px;
     background-color: blueviolet;
+    color: white;
 }
 
-
-@media screen and (max-width: 320px){
-    body{
-        grid-template-areas:
-        "nav nav nav"
-        "main main main"
-        "componenti componenti componenti"
-        "componenti componenti componenti"
-        "feats feats feats";
-    }
-    
-}
-@media screen and (min-width: 1024px){
-
-
-    body{
-        grid-template-areas:
-        "nav nav nav"
-        "main main main"
-        "componenti componenti componenti"
-        "feats feats feats";
+/* ===== MEDIA QUERIES (TABLET) ===== */
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
     }
 
     #navigation {
-        font-size: 14px;
-        padding: 20px 16px;
-    }
-    
-    #navigation li {
-        margin: 20px 60px;
+        padding: 20px 40px;
     }
 
-    #navigation li:hover {
-        outline: 20px solid rgba(255, 255, 255, 0.2);
-    }
-    
-    .nav-cta {
-        padding: 20px 30px;
-        font-size: 14px;
-    }
-
-    #Main {
+    #navigation ul {
+        display: flex;
+        position: static;
+        transform: none;
         width: auto;
-        padding: 20px;
-        height: 95vh;
+        background: rgba(155, 155, 155, 0.09);
+        padding: 10px 20px;
     }
 
-    .Welcome{
-        margin: 25vh;
+    #navigation li {
+        padding: 0 15px;
     }
 
-    #myVideo {
+    .nav-cta {
+        display: inline-block;
+        padding: 10px 25px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 55px;
+        transition: all 0.3s;
+    }
+
+    .nav-cta:hover {
+        background: rgba(20, 20, 20, 0.2);
+    }
+}
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+@media (min-width: 1024px) {
+    #navigation {
+        padding: 25px 60px;
+    }
+
+    #navigation li {
+        margin: 0 20px;
+        position: relative;
+    }
+
+    .Welcome {
+        margin: 0;
+        margin-left: 40vh;
+        margin-bottom: 20vh;
+        text-align: left; 
+    }
+    #navigation li::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width 0.3s;
+    }
+
+    #navigation li:hover::after {
         width: 100%;
-        height: 120%;
     }
-    
-    #componentiGruppo {
-        padding: 20px;
-        height: 110vh;
+
+    .main-title {
+        font-size: clamp(24px, 5vw, 10px);
+        letter-spacing: 5px;
     }
-    
-    #features {
-        padding: 20px;
-        height : 100vh;
+
+    .subtitle {
+        letter-spacing: 0.8em;
     }
 }
