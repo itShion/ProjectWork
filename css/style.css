@@ -37,6 +37,7 @@ body {
     align-items: center;
     padding: 15px 20px;
     background: transparent;
+    top: 0;
 }
 
 .nav-brand {
@@ -114,7 +115,9 @@ body {
 
 .Welcome {
     color: rgb(227, 227, 227);
-    margin: 0 auto;
+    margin-top: 0;
+    margin-left: 6.5vh;
+    margin-bottom: 25vh;
 }
 
 .main-title {
@@ -205,8 +208,8 @@ body {
 
     .Welcome {
         margin: 0;
-        margin-left: 40vh;
-        margin-bottom: 20vh;
+        margin-left: 45vh;
+        margin-bottom: 30vh;
         text-align: left; 
     }
     #navigation li::after {
