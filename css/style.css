@@ -234,5 +234,22 @@ body {
 
     .subtitle {
         letter-spacing: 0.8em;
+        position: relative;
+        display: inline-block;
+    }
+
+    .subtitle::after { 
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;   
+        height: 2px;
+        background: white;
+        transition: width 0.3s ease;
+    }
+
+    .subtitle:hover::after {
+        width: 100%;
     }
 }
