@@ -30,7 +30,7 @@ body {
 
 /* ===== NAVIGATION MOBILE  ===== */
 #navigation {
-    position: relative;
+    position: sticky;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -107,6 +107,7 @@ body {
 
 /* ===== MAIN CONTENT ===== */
 #Main {
+    background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -208,8 +209,8 @@ body {
 
     .Welcome {
         margin: 0;
-        margin-left: 45vh;
-        margin-bottom: 30vh;
+        margin-left: 39vh;
+        margin-bottom: 25vh;
         text-align: left; 
     }
     #navigation li::after {
