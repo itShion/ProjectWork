@@ -113,6 +113,8 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
+
+    scroll-margin-top: 100vh;
 }
 
 .Welcome {
@@ -378,3 +380,4 @@ img {
         grid-auto-columns: calc((100% / 3) - 12px);
     }
 }
+
