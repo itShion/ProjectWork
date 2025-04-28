@@ -236,7 +236,7 @@ ul li a:hover {
 
   .image img, .image2 img {
     width: 100%;
-    max-width: 400px;
+    max-width: 50vh;
   }
 
   .image {
