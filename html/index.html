@@ -3,34 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonten</title>
+    <meta name="description" content="Official website of Bonten">
+    <title>Bonten - Official Website</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Preconnect to external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="../Medias/robin.png" type="image/png">
 </head>
 <body>
     <!-- Video Background -->
     <div id="video-container">
         <video autoplay muted loop playsinline preload="auto" id="myVideo">
             <source src="../Medias/background.mp4" type="video/mp4">
-            <!-- Fallback per browser che non supportano video -->
+            <!-- Fallback for browsers that don't support video -->
             <img src="../Medias/background-fallback.jpg" alt="Background">
         </video>
     </div>
 
     <!-- Navigation -->
-    <nav id="navigation">
-        <img src="../Medias/robin.png" alt="Logo Bonten" class="nav-brand">
+    <nav id="navigation" aria-label="Main navigation">
+        <a href="#Main" class="nav-brand-link">
+            <img src="../Medias/robin.png" alt="Bonten Logo" class="nav-brand">
+        </a>
         
         <!-- Hamburger Menu (mobile) -->
-        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">☰</button>
         
         <!-- Menu Links -->
-        <ul>
+        <ul id="main-menu">
             <li><a href="#Main">Home</a></li>
             <li><a href="#componentiGruppo">Componenti</a></li>
+            <li><a href="#features">Features</a></li>
             <li><a href="#extras">Extras</a></li>
         </ul>
 
@@ -42,94 +51,90 @@
     <main id="Main">
         <div class="Welcome">
             <div class="titles">
-                <div class="main-title">Welcome to</div>
-                <div class="subtitle">Bonten</div>
+                <h1 class="main-title">Welcome to</h1>
+                <h2 class="subtitle">Bonten</h2>
             </div>
         </div>
     </main>
 
     <!-- Sezione Componenti -->
-    <section id="componentiGruppo">
+    <section id="componentiGruppo" aria-labelledby="componenti-heading">
         <div class="container">
-            <h2>Componenti del Gruppo</h2>
-                <!-- Slides -->
+            <h2 id="componenti-heading">Componenti del Gruppo</h2>
+            <div class="carousel-container">
                 <ul class="carousel">
                     <li class="box">
                         <div class="img">
-                            <a href="enzo.html">
-                                <img src="../Medias/Pieroprofilepic.jpg" alt="Foto di Piero">
+                            <a href="enzo.html" aria-label="View Enzo's profile">
+                                <img src="../Medias/Pieroprofilepic.jpg" alt="Foto di Piero Enzo">
+                                <div class="overlay">
+                                    <span class="name">Piero Enzo</span>
+                                </div>
                             </a>
-                            <div class="overlay">
-                                <span class="name">Piero Enzo</span>
-                            </div>
                         </div>    
                     </li>
                     <li class="box">
                         <div class="img">
-                            <a href="ayman.html">
-                                <img src="../Medias/Aymanprofilepic.jpg" alt="Foto di Ayman">
+                            <a href="ayman.html" aria-label="View Ayman's profile">
+                                <img src="../Medias/Aymanprofilepic.jpg" alt="Foto di Ayman Ahmed">
+                                <div class="overlay">
+                                    <span class="name">Ayman Ahmed</span>
+                                </div>
                             </a>
-
-                            <div class="overlay">
-                                <span class="name">Ayman Ahmed</span>
-                            </div>
                         </div>
                     </li>
                     <li class="box">
                         <div class="img">
-                            <a href="mamin.html">
-                                <img src="../Medias/Maminprofilepic.jpg" alt="Foto di Mamin">
+                            <a href="mamin.html" aria-label="View Mohammed's profile">
+                                <img src="../Medias/Maminprofilepic.jpg" alt="Foto di Mohammed">
+                                <div class="overlay">
+                                    <span class="name">Mohammed</span>
+                                </div>
                             </a>
-                            
-                            <div class="overlay">
-                                <span class="name">Mohammed</span>
-                            </div>
                         </div>
                     </li>
                 </ul>
-        </div>
-    </section>
-
-    <!-- Sezione Features di Mamin -->
-    <section id="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Feature 1</h3>
-                    <p>Descrizione feature</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Feature 2</h3>
-                    <p>Descrizione feature</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Feature 3</h3>
-                    <p>Descrizione feature</p>
-                </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer Section -->
+<footer id="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="../Medias/robin.png" alt="Bonten Logo" class="footer-logo">
+                <h3>Bonten</h3>
+                <p>Creating innovative solutions</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#Main">Home</a></li>
+                    <li><a href="#componentiGruppo">Members</a></li>
+                    <li><a href="#extras">Extras</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h4>Get In Touch</h4>
+                <p>Email: info@bonten.com</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 Bonten. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
     
-    <script>
-        // Menu Hamburger
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('#navigation ul');
-        
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            menuBtn.innerHTML = navMenu.classList.contains('show') ? 'X' : '☰';
-        });
-        
-        // Chiudi menu al click su link (mobile)
-        document.querySelectorAll('#navigation a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    navMenu.classList.remove('show');
-                    menuBtn.innerHTML = '☰';
-                }
-            });
-        });
-    </script>
+    <script src="../js/script.js"></script>
 </body>
-</html> 
+</html>

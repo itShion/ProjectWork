@@ -5,15 +5,12 @@
     box-sizing: border-box;
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: 'Inter', sans-serif;
     color: rgb(230, 230, 230);
     min-height: 100vh;
     min-width: 100%;
+
     overflow-x: hidden;
 }
 
@@ -88,7 +85,6 @@ body {
     list-style: none;
     padding: 15px 0;
     text-align: center;
-
 }
 
 #navigation li {
@@ -106,7 +102,6 @@ body {
     font-size: 14px;
     letter-spacing: 1px;
     padding: 5px 15px;
-    transition: all 2s ease;
 }
 
 .nav-cta {
@@ -191,79 +186,53 @@ body {
 
 .box {
     position: relative;
-    width: 300px;
-    /* max-width: 300px; */
-    max-width: 90vw;
-
-    /* padding: 10px; */
-    /* padding-left: 30px; */
-    /* padding-right: 30px; */
-
-    /* height: 300px; */
-    height: auto;
-    /* flex-shrink: 0; */
-    cursor: pointer;
-    transition: transform 0.3s ease;
+    width: 280px;
+    height: 280px;
     scroll-snap-align: center;
-    align-items: center;
-    justify-content: center;
-
     overflow: hidden;
     border-radius: 20px;
-
-    /* flex: 0 0 auto; */
-    margin-left: 24vw;
-    /* margin-right: 22vw; */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .box .img img {
-    width: 240px;
-    height: 240px;
-    object-fit: cover;
-}
-
-img {
     width: 300px;
     height: 300px;
-    border-radius: 20px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    transition: transform 0.3s ease, filter o.3s ease;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* Overlay del testo */
+/* Overlay */
 .overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--overlay-color);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-/* Effetto Hover */
+.name {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Hover Effects */
 .box:hover img {
-    transform: scale(1.2);
-    filter: brightness(0.7);
+    transform: scale(1.1);
 }
 
 .box:hover .overlay {
     opacity: 1;
 }
-
-.box:not(:hover) img {
-    transform: scale(0.9);
-    border-radius: 20px;
-}
-
-.box:not(:hover) .overlay {
-    opacity: 0;
-}
-
 /* rimozione dello scrollbar */
 .carousel::-webkit-scrollbar {
     display: none; 
@@ -300,13 +269,104 @@ img {
     font-size: clamp(24px, 3vw, 36px);
     color: #222;
 }
-
-/* ===== Roba di Mamin ===== */
-#features {
-    padding: 60px 20px;
-    background-color: blueviolet;
-    color: white;
+/* ===== Footer Section ===== */
+#footer {
+    padding: 60px 20px 30px;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    color: var(--text-color);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
 }
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.footer-brand h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-links h4::after,
+.footer-contact h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+}
+
+/* Font Awesome for icons (add to head if not already there) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 
 /* ===== MEDIA QUERIES (TABLET) ===== */
 @media (min-width: 768px) {
@@ -353,6 +413,14 @@ img {
     .box {
         margin-left: 3vw;
     }
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+    
+    .footer-brand {
+        text-align: left;
+    }
 }
 
 /* ===== MEDIA QUERIES (DESKTOP) ===== */
@@ -368,9 +436,8 @@ img {
 
     .Welcome {
         margin: 0;
-        margin-left: 10vh;
         margin-bottom: 25vh;
-        text-align: left; 
+        text-align: center; 
     }
     #navigation li::after {
         content: '';
@@ -393,7 +460,7 @@ img {
     }
 
     .subtitle {
-        letter-spacing: 0.8em;
+        letter-spacing: 0.4em;
         position: relative;
         display: inline-block;
     }
@@ -411,6 +478,14 @@ img {
 
     .subtitle:hover::after {
         width: 100%;
+    }
+    .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+    }
+    
+    .footer-brand {
+        text-align: left;
     }
 
     /* ===== COMPONENTI GRUPPO ===== */
