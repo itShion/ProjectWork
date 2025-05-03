@@ -121,7 +121,7 @@ body {
     flex-direction: column;
     justify-content: center;
 
-    background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
+    /* background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%); */
     height: 100vh;
     display: flex;
     align-items: center;
@@ -288,7 +288,8 @@ img {
 
     min-height: 100vh;
     /* min-width: 100vw; */
-    background: linear-gradient(to bottom, whitesmoke, blueviolet);
+    background-color: rgba(0, 0, 0, 0.5);
+
 }
 
 #componentiGruppo h2 {
@@ -298,13 +299,13 @@ img {
     text-align: center;
     margin-bottom: 30px;
     font-size: clamp(24px, 3vw, 36px);
-    color: #222;
+    color: whitesmoke;
 }
 
 /* ===== Roba di Mamin ===== */
 #features {
     padding: 60px 20px;
-    background-color: blueviolet;
+    background-color: #1d1d1d;
     color: white;
 }
 
