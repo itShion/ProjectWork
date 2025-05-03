@@ -87,6 +87,7 @@
                         </div>
                     </li>
                 </ul>
+                
         </div>
     </section>
 
@@ -111,25 +112,6 @@
         </div>
     </section>
     
-    <script>
-        // Menu Hamburger
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('#navigation ul');
-        
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            menuBtn.innerHTML = navMenu.classList.contains('show') ? 'X' : '☰';
-        });
-        
-        // Chiudi menu al click su link (mobile)
-        document.querySelectorAll('#navigation a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    navMenu.classList.remove('show');
-                    menuBtn.innerHTML = '☰';
-                }
-            });
-        });
-    </script>
+    <script src="../js/script.js"></script>
 </body>
 </html> 
