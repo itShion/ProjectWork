@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- Icons for footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Video Background -->
@@ -22,20 +27,20 @@
 
     <!-- Navigation -->
     <nav id="navigation">
-        <img src="../Medias/robin.png" alt="Logo Bonten" class="nav-brand">
+        <a href="#" id="goTop" class="nav-brand">
+            <img src="../Medias/robin.png" alt="Logo Bonten" class="nav-brand">
+        </a> 
         
-        <!-- Hamburger Menu (mobile) -->
-        <button class="mobile-menu-btn" aria-label="Menu">☰</button>
         
         <!-- Menu Links -->
         <ul>
-            <li><a href="#Main">Home</a></li>
+            <li><a href="#" id="goTop">Home</a></li>
+            <li><a href="#descrizioneGruppo">Desrizione</a></li>
             <li><a href="#componentiGruppo">Componenti</a></li>
-            <li><a href="#extras">Extras</a></li>
         </ul>
 
-        <!-- CTA Button -->
-        <a href="#contact" class="nav-cta">Let's talk</a>
+       <div class="nav-cta time-display" id="time"></div>
+
     </nav>
 
     <!-- Main Content -->
@@ -47,6 +52,33 @@
             </div>
         </div>
     </main>
+
+    <section id="descrizioneGruppo">
+        <div class="container">
+            <hr>
+          <div class="gruppo-content">
+            <div class="testo">
+
+              <h2>Chi siamo</h2>
+              <p>
+                Siamo un gruppo di studenti del corso Full Stack Developer dell'ITS Olivetti di Modena, un istituto tecnico superiore che forma figure professionali altamente specializzate nel settore digitale e informatico.
+              </p>
+              <p>
+                Il nostro percorso unisce lezioni teoriche a laboratori pratici, con l'obiettivo di prepararci a diventare sviluppatori completi, capaci di operare su front-end, back-end e database in ambienti di lavoro reali.
+              </p>
+              <p>
+                Lavoriamo insieme per acquisire competenze solide e trasversali, affrontando progetti concreti che ci mettono alla prova sul campo, stimolando collaborazione, problem solving e spirito critico.
+              </p>
+            </div>
+            <div class="immagine">
+              <img src="../Medias/olivetts.jpg" alt="Foto rappresentativa del gruppo o del coding">
+            </div>
+          </div>
+
+        </div>
+      </section>
+      
+    
 
     <!-- Sezione Componenti -->
     <section id="componentiGruppo">
@@ -87,49 +119,31 @@
                         </div>
                     </li>
                 </ul>
+                
         </div>
     </section>
 
-    <!-- Sezione Features di Mamin -->
-    <section id="features">
-        <div class="container">
-            <h2>Features</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Feature 1</h3>
-                    <p>Descrizione feature</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Feature 2</h3>
-                    <p>Descrizione feature</p>
-                </div>
-                <div class="col-md-4">
-                    <h3>Feature 3</h3>
-                    <p>Descrizione feature</p>
-                </div>
+    <footer id="footer">
+        <div class="f-container">
+            <hr>
+            <h3> Link utili!</h3>
+            <div class="icone">
+                
+                <a href="https://github.com/itShion/ProjectWork" target="_blank"> <i class ="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=O91DT1pR1ew&ab_channel=CB2C" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
             </div>
         </div>
-    </section>
+
+        <div class="footerNav">
+
+        </div>
+    </footer>
+
     
-    <script>
-        // Menu Hamburger
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('#navigation ul');
-        
-        menuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-            menuBtn.innerHTML = navMenu.classList.contains('show') ? 'X' : '☰';
-        });
-        
-        // Chiudi menu al click su link (mobile)
-        document.querySelectorAll('#navigation a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    navMenu.classList.remove('show');
-                    menuBtn.innerHTML = '☰';
-                }
-            });
-        });
-    </script>
+
+    
+    <script src="../js/script.js"></script>
 </body>
 </html> 
