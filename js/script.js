@@ -18,21 +18,28 @@ document.addEventListener('click', (e) => {
     }
 });
 
+
+
 document.querySelectorAll('#navigation a').forEach(link => {
     link.addEventListener('click', () => {
         if (window.innerWidth < 768) {
             navMenu.classList.remove('show');
+            
         }
     });
 });
 
-// Scroll to top
+// Fine roba del menu
+
+
+// Scroll to top per bypassare il fatto che indirizzava solo fino al Main e non alla nav
+
 document.getElementById("goTop").addEventListener("click", function(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// Time API Function
+// Time API Function // TimeZoneDB
 async function fetchTime() {
     const apiKey = 'UPL54EI95EIZ';
     const timezone = 'Europe/Rome';
@@ -68,11 +75,3 @@ async function fetchTime() {
 // Initialize and update time
 fetchTime();
 setInterval(fetchTime, 60000);
-
-// Show initial time immediately while waiting for API
-const now = new Date();
-timeDisplay.textContent = now.toLocaleTimeString([], { 
-    hour: '2-digit', 
-    minute: '2-digit',
-    hour12: false
-});
