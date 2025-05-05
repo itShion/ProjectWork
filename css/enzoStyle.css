@@ -1,254 +1,208 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
+/* ===== VARIABILI ===== */
 :root {
-  --primary-color: #ffffff;
-  --primary-color-dark: #ea8c33;
-  --secondary-color: #ca8a04;
-  --text-dark: #e8bd00;
-  --text-light: #eeeeee;
-  --extra-light: #1d1d1d;
-  --max-width: 1200px;
+  --colorePrimario: #ffffff;
+  --coloreSecondario: #ca8a04;
+  --coloreTesto: #e8bd00;
+  --coloreSfondo: #1d1d1d;
+  --gradienteSfondo: linear-gradient(to bottom, #171717, #020202);
+  --maxWidth: 150vh;
 }
 
-html{
-    scroll-behavior: smooth;
-}
+/* ===== RESET ===== */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-hr{
-    border: 1px solid var(--text-dark);
-}
-a {
-  text-decoration: none;
+html{
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1d1d1d;
+  background-color: var(--coloreSfondo);
+  background: var(--gradienteSfondo);
+  color: var(--colorePrimario);
+  padding-top: 70px; /* Spazio per navbar fissa */
 }
 
-/* NAVIGATION */
-nav {
-  width: 100%;
+hr {
+  border: 1px solid var(--coloreTesto);
+  margin: 2rem 0;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  background-color: #1d1d1d;
-  z-index: 99;
+  width: 100%;
+  background-color: var(--coloreSfondo);
+  z-index: 100;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.nav__content {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 1.5rem 1rem;
+.navbarContent {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 0 1.5rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-nav .logo a {
+.logo {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--primary-color);
-  transition: 0.3s;
-}
-nav .logo a:hover {
-  color: var(--primary-color-dark);
+  color: var(--colorePrimario);
+  text-decoration: none;
 }
 
-nav .checkbox {
-  display: block;
+.logo:hover {
+  color: var(--coloreSecondario);
 }
 
-nav input {
-  display: none;
-}
-nav .checkbox i {
+/* Pulsante Hamburger */
+.menuButton {
+  background: none;
+  border: none;
+  color: var(--colorePrimario);
   font-size: 2rem;
-  color: var(--primary-color);
   cursor: pointer;
+  z-index: 101;
+  display: block; /* Visibile solo su mobile */
 }
 
-ul {
-  position: absolute;
-  width: 100%;
-  height: calc(100vh - 85px);
+/* Menu Mobile */
+.menuList {
+  position: fixed;
+  top: 0;
   left: -100%;
-  top: 85px;
-  background-color: var(--extra-light);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-  list-style: none;
-  transition: left 0.3s;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--coloreSfondo);
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  transition: left 0.3s ease-in-out;
+  z-index: 99;
+  padding-top: 5rem;
 }
 
-nav #check:checked ~ ul {
+.menuList.open {
   left: 0;
 }
 
-ul li a {
-  padding: 0.5rem 1rem;
-  border: 2px solid transparent;
-  text-decoration: none;
+.menuList li a {
+  color: var(--coloreTesto);
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-dark);
-  transition: 0.3s;
-  font-size: 1.25rem;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-ul li a:hover {
-  border-top-color: var(--secondary-color);
-  border-bottom-color: var(--secondary-color);
-  color: var(--secondary-color);
+.menuList li a:hover {
+  color: var(--coloreSecondario);
 }
 
-/* MAIN CONTENT */
-.section {
-  background-color: var(--extra-light);
-  padding-top: 85px;
-}
-
-.section__container {
-  min-height: 100vh;
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-}
-
-.profile-container,
-.path-container {
+/* ===== SEZIONI PRINCIPALI ===== */
+.profiloContent,
+.percorsoContent {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-.content, .Percorso {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
+
+.fotoProfilo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fotoPercorso {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+.testoProfilo,
+.testoPercorso {
   text-align: center;
 }
 
-.subtitle {
-  letter-spacing: 2px;
-  color: var(--text-light);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--text-dark);
+h1, h2 {
+  color: var(--coloreTesto);
   margin-bottom: 1rem;
 }
 
-.title span {
-  font-weight: 600;
+/* ===== PLAYLIST ===== */
+.playlist {
+  text-align: center;
+  padding: 2rem;
+  background-color: #121212;
+  border-radius: 16px;
+  max-width: 80%;
+  margin: 2rem auto;
 }
 
-.description,
-.p-description {
-  line-height: 1.5;
-  color: var(--text-light);
-  margin-bottom: 2rem;
+.playlist iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  border-radius: 16px;
 }
 
-.image {
-    display: grid;
-    place-items: center;
-  }
-  
-  .image img {
-    width: min(25rem, 70%);
-    border-radius: 100%;
-    height: min(26rem, 70%);
-  }
-  
-  .image2 {
-      display: grid;
-      place-items: center;
-    }
-    
-  .image2 img {
-    border-radius: 50px;
-    margin-left: auto;
-    width: min(25rem, 100%);
-    height: min(30rem, 100%);
+/* ===== DESKTOP (min-width: 769px) ===== */
+@media (min-width: 769px) {
+  .menuButton {
+    display: none; /* Nascondi hamburger */
   }
 
-/* DESKTOP VERSION */
-@media screen and (min-width: 1024px) {
-  nav .checkbox {
-    display: none;
-  }
-
-  ul {
+  .menuList {
     position: static;
-    flex-direction: row;
+    width: auto;
     height: auto;
-    background: none;
-    left: 0;
-    top: 0;
-    gap: 1rem;
-    justify-content: flex-end; 
-  }
-
-  ul li a {
-    font-size: 1rem;
-
-  }
-
-  .section__container {
-    padding: 1rem;
-    gap: 6rem;
-  }
-
-  .profile-container {
     flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    background-color: transparent;
+    padding-top: 0;
+    gap: 1.5rem;
   }
 
-  .path-container {
+  .menuList li a {
+    font-size: 1rem;
+  }
+
+  .profiloContent,
+  .percorsoContent {
+    flex-direction: row;
+    justify-content: space-between; 
+  }
+
+  .profiloContent{
+    height: 86vh;
+  }
+
+  .percorsoContent {
     flex-direction: row-reverse;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    height: 100vh; 
   }
 
-  .content, .Percorso {
+  .testoProfilo,
+  .testoPercorso {
     text-align: left;
-    flex: 1;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .image img, .image2 img {
-    width: 100%;
-    max-width: 50vh;
-  }
-
-  .image {
-    flex: 1;
-  }
-
-  .image2 {
-    flex: 1;
+    max-width: 50%;
   }
 }

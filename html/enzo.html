@@ -1,78 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="../css/enzoStyle.css" />
-    <title>Web Design Mastery | Responsive Portfolio</title>
-  </head>
-  <body>
-    <nav>
-      <div class="nav__content">
-        <div class="logo"><a href="#">Mannyope</a></div>
-        <label for="check" class="checkbox">
-          <i class="ri-menu-line"></i>
-        </label>
-        <input type="checkbox" name="check" id="check" />
-        <ul>
-          <li><a href="../html/index.html">Home</a></li>
-          <li><a href="#Percorso">Percorso</a></li>
-          <li><a href="#">Hobby</a></li>
-          <li><a href="#">Artists</a></li>
-        </ul>
-      </div>
-    </nav>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/enzoStyle.css" />
+  <title>Portfolio di Mannyope</title>
+</head>
+<body>
 
-    <section class="section">
-      <div class="section__container">
-        <div class="profile-container">
 
-        <div class="image">
-            <img src="../Medias/manny.jpg" alt="profile" />
-        </div>
-          <div class="content">
-            <p class="subtitle">HELLO</p>
-            <h1 class="title">
-              I'm Mannyope<br/>a Full Stack Web Developer
-            </h1>
-            <p class="description">
-              Benvenuto nel mio portfolio di sviluppo web! Sono Mannyope, un
-              Full Stack Developer Junior con una grande passione per lo svluppo di Software.
-            </p>
-          </div>
-        </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbarContent">
+      <a href="#" class="logo">Mannyope</a>
+      <button class="menuButton" id="hamburgerButton">
+        <i class="ri-menu-line" id="menuIcon"></i>
+      </button>
+      <ul class="menuList" id="menuList">
+        <li><a href="../html/index.html">Home</a></li>
+        <li><a href="#percorso">Percorso</a></li>
+        <li><a href="#playlist">Playlist</a></li>
+        <li><a href="#">Artisti</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <hr>
-
-        <div class="path-container">
-            <div class="image2">
-                <img src="../Medias/percorso.jpg" alt="Percorso Img">
-            </div>
-            <div class="Percorso" id="Percorso">
-                
-            <h1 class="title"> 
-                IL MIO PERCORSO
-            </h1>
-
-            <p class="p-description"> 
-                Il mio percorso nel mondo dell'informatica è iniziato alle scuole superiori, 
-                dove ho acquisito le basi della programmazione e delle tecnologie digitali. 
-                Dopo il diploma, ho continuato la mia formazione all'ITS Adriano Olivetti come Full 
-                Stack Developer. Qui ho approfondito lo sviluppo sia front-end che back-end, lavorando con
-                diverse tecnologie e imparando a costruire soluzioni complete e scalabili. 
-                Questo percorso mi ha dato una visione completa dello sviluppo software, preparandomi ad 
-                affrontare le sfide professionali nel mondo IT.
-            </p>
-                    
-           
-            </div>
-
+  <!-- Sezione principale -->
+  <main>
+    <!-- Sezione profilo -->
+    <section class="profilo">
+      <div class="profiloContent">
+        <img src="../Medias/manny.jpg" alt="Foto di Mannyope" class="fotoProfilo" />
+        <div class="testoProfilo">
+          <p class="helloText">Ciao!</p>
+          <h1>Mi chiamo Mannyope<br>e sono un Full Stack Developer Junior</h1>
+          <p>
+            Benvenuto nel mio portfolio! Sono uno sviluppatore junior appassionato di creare soluzioni web complete.
+          </p>
         </div>
       </div>
     </section>
-  </body>
+
+    <hr>
+
+    <!-- Sezione percorso -->
+    <section class="percorso" id="percorso">
+      <div class="percorsoContent">
+        <img src="../Medias/percorso.jpg" alt="Il mio percorso" class="fotoPercorso" />
+        <div class="testoPercorso">
+          <h2>Il mio percorso</h2>
+          <p>
+            Ho iniziato con l'informatica alle superiori e poi ho proseguito all'ITS Olivetti, 
+            dove ho imparato sia front-end che back-end. Ora cerco nuove sfide nel mondo IT!
+          </p>
+
+          <p> Linguaggi attualmente che conosco: <br> <br>
+            <ul>
+              <li>C#/C++</li>
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Java</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+
+    <!-- Sezione playlist -->
+    <section class="playlist" id="playlist">
+      <h2>Una playlist per te</h2>
+      <iframe 
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1EQoqCH7BwIYb7?utm_source=generator&theme=0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
+    </section>
+  </main>
+</body>
+
+<script src="../js/enzoScript.js"></script>
 </html>
