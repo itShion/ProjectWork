@@ -174,7 +174,6 @@ body {
 
 #descrizioneGruppo {
     width: 100vw;
-    padding: 15vh 10vw;
     background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
     color: #1a1a1a;
     text-align: center;
@@ -184,10 +183,9 @@ body {
 
   #descrizioneGruppo hr {
     width: 60%;
-    padding: 4vw;
     border: none;
     border-top: 2px solid black;
-    margin: 0 auto 20px;
+    margin: 20vh auto 10vh;
 }
   
   #descrizioneGruppo h2 {
@@ -342,9 +340,6 @@ img {
 }
 
 #componentiGruppo {
-    /* background-color: whitesmoke;
-    padding: 40px 20px;
-    color: #e2e2e2; */
 
     width: 100vw;
     overflow: hidden;
@@ -355,11 +350,9 @@ img {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* padding: 20px; */
     padding: 2vw;
 
     min-height: 100vh;
-    /* min-width: 100vw; */
     background-color: rgba(0, 0, 0, 0.5);
 
 }
