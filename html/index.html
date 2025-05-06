@@ -17,12 +17,11 @@
 </head>
 <body>
     <div id="video-container">
-        <video autoplay muted loop playsinline webkit-playsinline 
-               id="myVideo" preload="auto"
-               poster="Medias/background-fallback.jpg">
-          <source src="Medias/background.mp4#t=0.1" type="video/mp4"> <!-- #t=0.1 è un hack per iOS -->
+        <video autoplay muted loop playsinline preload="auto" id="myVideo">
+            <source src="Medias/background.mp4" type="video/mp4">
+            <!-- Fallback per browser che non supportano video -->
+            <img src="Medias/background-fallback.jpg" alt="Background">
         </video>
-        <!-- Fallback come CSS, non HTML -->
       </div>
 
     <!-- Navigation -->
@@ -92,7 +91,7 @@
                                 <img src="Medias/Pieroprofilepic.jpg" alt="Foto di Piero">
                             </a>
                             <div class="overlay">
-                                <span class="name">Enzo</span>
+                                <span class="name">Piero Enzo</span>
                             </div>
                         </div>    
                     </li>
