@@ -212,11 +212,12 @@ body {
   
   .immagine {
     flex: 1;
-    min-width: 280px;
+    min-width: 20vh;
   }
   
   .immagine img {
     max-width: 100%;
+    margin-bottom: 10vh;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -537,6 +538,12 @@ footer{
     .subtitle:hover::after {
         width: 100%;
     }
+
+    /* ===== DESCRIZIONE DEL GRUPPO ===== */
+
+    .immagine img {
+        margin-bottom: 0;
+      }
 
     /* ===== COMPONENTI GRUPPO ===== */
 
