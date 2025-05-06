@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+
     // Enhance blob animations
     const blobs = document.querySelectorAll('.blob');
     blobs.forEach(blob => {
@@ -49,35 +50,44 @@ document.addEventListener('DOMContentLoaded', function() {
             ease: "sine.inOut"
         });
     });
-    // Remove the existing project card hover effect and replace with:
-    const projectCards = document.querySelectorAll('.project-card');
-    let isAnimating = false;
 
+    const projectCards = document.querySelectorAll('.project-card');
+    
     projectCards.forEach(card => {
-        // Reset shine position when not hovering
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card, {
-                '--shine-position': '100%',
-                duration: 0.4
-            });
+        // Desktop hover effect
+        card.addEventListener('mouseenter', function() {
+            if (!window.matchMedia("(hover: none)").matches) {
+                gsap.to(this.querySelector('.default-content'), { opacity: 0, duration: 0.3 });
+                gsap.to(this.querySelector('.hover-content'), { opacity: 1, duration: 0.3 });
+            }
         });
         
-    // Track mouse position for dynamic shine
-    card.addEventListener('mousemove', (e) => {
-        if (isAnimating) return;
+        card.addEventListener('mouseleave', function() {
+            if (!window.matchMedia("(hover: none)").matches) {
+                gsap.to(this.querySelector('.default-content'), { opacity: 1, duration: 0.3 });
+                gsap.to(this.querySelector('.hover-content'), { opacity: 0, duration: 0.3 });
+            }
+        });
         
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        // Calculate angle from center
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-        const angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 90;
-        
-        // Apply dynamic shine
-        card.style.setProperty('--shine-angle', `${angle}deg`);
-        card.style.setProperty('--shine-position', `${x/rect.width * 100}%`);
+        // Mobile touch support
+        card.addEventListener('click', function() {
+            if (window.matchMedia("(hover: none)").matches) {
+                // Close other open cards
+                document.querySelectorAll('.project-card').forEach(otherCard => {
+                    if (otherCard !== this) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                // Toggle this card
+                this.classList.toggle('active');
+            }
+        });
     });
-});
+
+    // Initialize mobile state
+    if (window.matchMedia("(hover: none)").matches) {
+        document.querySelectorAll('.hover-content').forEach(content => {
+            content.style.display = 'none';
+        });
+    }
 });
