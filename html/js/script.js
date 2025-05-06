@@ -77,6 +77,30 @@ fetchTime();
 setInterval(fetchTime, 60000);
 
 
+// #TODO per Piero : Capire se è possibile visualizzarlo sul mio telefono
 if (!navigator.userAgent.match(/Mobile/)) {
     document.getElementById('bg-video').src = "video.mp4";
   }
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('myVideo');
+    
+    // 1. Prova a forzare la riproduzione
+    const playPromise = video.play();
+    
+    // 2. Se fallisce, mostra un pulsante di attivazione
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        const btn = document.createElement('button');
+        btn.innerHTML = '▶️ Attiva Background';
+        btn.style.position = 'fixed';
+        btn.style.bottom = '20px';
+        btn.style.left = '50%';
+        btn.style.transform = 'translateX(-50%)';
+        btn.style.zIndex = '100';
+        btn.onclick = () => video.play().then(() => btn.remove());
+        document.body.appendChild(btn);
+      });
+    }
+  });
