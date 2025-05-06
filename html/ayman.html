@@ -6,41 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayman's Profile</title>
     <!-- link to ayman_style.css -->
-    <link rel="stylesheet" href="../css/ayman_style.css">
+    <link rel="stylesheet" href="css/ayman_style.css">
     <!-- icone -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Icons for footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <body>
-    <!-- Navigation -->
-    <nav id="navigation">
-        
+    <header>
+        <h1>B Y D</h1>
+
         <!-- Hamburger Menu (mobile) -->
         <button class="mobile-menu-btn" aria-label="Menu">☰</button>
 
-        <!-- Menu Links -->
-        <ul>
-            <li><a href="../html/index.html">Home</a></li>
-            <li><a href="#componentiGruppo">Componenti</a></li>
-            <li><a href="#extras">Extras</a></li>
-        </ul>
-    </nav>
+        <!-- Navigation -->
+        <nav class="navigation">
+        
 
-    <header>
-        <h1>MY PROFILE</h1>
+            <!-- Menu Links -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">Componenti</a></li>
+                <li><a href="">Extras</a></li>
+            </ul>
+        </nav>
     </header>
-    <!-- <main>
-        <p>
-            Ayman un componente del gruppo
-        </p>
-    </main> -->
 
     <section class="hidden">
-        <!-- <img src="../Medias/robin.png" alt="Ayman Propic"> -->
+        <img classe="profilo" src="Medias/Jet.avif" alt="Ayman Propic">
         <h2>Who Am I &#10068 &#10067 &#10068</h2>
-        <p>First of all I assure you im not a robot, trust me. &#128521</p>
+        <p>First of all I assure you I'm not a robot, trust me. &#128521</p>
         <p>
             As you've already seen from the page's title my name is Ayman
-            and yes Im your real father (obviously a joke).
+            and this is my page.
+            I'm currently doing an assignment where me and my group have to make a responsive 
+            page with an individal page for each member, so as I'm sure you've guessed, this is mine.
 
             By the way, I guess you're a bit more curious about me (if not then close my page&#128548)
         </p>
@@ -49,7 +51,7 @@
     <section class="hidden">
         <h2>Well, Let's start! &#128076 </h2>
         <p>
-            I'm 200 years old and spent most of my life training to become a good
+            I'm 200 years old (not a typo) and spent most of my life training to become a good
             programmer. Did I become one you ask? well... not yet. 
             But one thing I did gain for sure is "patience"&#129496.
             Because I assure you once you try to run your code and see a bunch of bugs
@@ -80,23 +82,46 @@
     </section>
 
     <section class="hidden">
-        <h2>Favorites Pokemons</h2>
-        <div class="pokemon-grid">
-            <div class="pokemon-card">
+        <h2>Favorite Pokémon's</h2>
+        <div class="pokemon-flex">
+            <div class="pokemon hidden">
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/571.png" alt="Zoroark">
               <p>Zoroark</p>
             </div>
-            <div class="pokemon-card">
+            <div class="pokemon hidden">
               <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/392.png" alt="Infernape">
               <p>Infernape</p>
             </div>
           </div>
+        <p>What? don't tell me you don't like Pokémon's</p>
+        <P>to be honest I don't really have much to say so I guess that's all
+            you're going to get about me. Don't be sad, if I have time and 
+            I'm bored I might updated this, so do not worry. &#128521
+        </P>
     </section>
 
-    <section class="hidden">
-        <hi>Hello, idk</hi>
-        <p>Idk what to tell ya buddy</p>
-    </section>
+    <footer id="footer">
+        <div class="f-container">
+            <button id="theme-switch">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M600-640 480-760l120-120 120 120-120 120Zm200 120-80-80 80-80 80 80-80 80ZM483-80q-84 0-157.5-32t-128-86.5Q143-253 111-326.5T79-484q0-146 93-257.5T409-880q-18 99 11 193.5T520-521q71 71 165.5 100T879-410q-26 144-138 237T483-80Z"/></svg> 
+            </button>
+            <hr>
+            <h3> Link utili!</h3>
+            <div class="icone">
+                
+                <a href="https://github.com/itShion/ProjectWork" target="_blank"> <i class ="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"> <i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"> <i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.youtube.com/watch?v=O91DT1pR1ew&ab_channel=CB2C" target="_blank"> <i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="footerNav">
+
+        </div>
+    </footer>
+
 </body>
-<script defer src="../js/ayman_script.js"></script>
+<script defer src="js/ayman_script.js"></script>
 </html>

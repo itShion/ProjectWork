@@ -174,7 +174,7 @@ body {
 
 #descrizioneGruppo {
     width: 100vw;
-    padding: 15vh 10vw;
+    
     background: linear-gradient(to bottom, #f9f9f9, #eaeaea);
     color: #1a1a1a;
     text-align: center;
@@ -187,7 +187,7 @@ body {
     padding: 4vw;
     border: none;
     border-top: 2px solid black;
-    margin: 0 auto 20px;
+
 }
   
   #descrizioneGruppo h2 {
@@ -205,6 +205,7 @@ body {
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
+    width: 100%;
   }
   
   .testo {
@@ -474,6 +475,7 @@ footer{
     .box {
         margin-left: 3vw;
     }
+
 }
 
 /* ===== MEDIA QUERIES (DESKTOP) ===== */
