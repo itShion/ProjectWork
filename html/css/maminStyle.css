@@ -317,24 +317,6 @@ h1, h2, h3 {
     gap: 30px;
 }
 
-.contact-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    transition: var(--transition);
-}
-
-.contact-button.email {
-    background: var(--nebula-light);
-    color: var(--nebula-darker);
-}
-
 .contact-button:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -403,11 +385,11 @@ h1, h2, h3 {
 
 /* Enhanced Color Contrast */
 .project-card:nth-child(1) {
-    background: linear-gradient(135deg, var(--nebula-purple) 0%, #3A1E8A 100%);
+    background: linear-gradient(135deg, var(--nebula-blue) 0%, #2C5B6F 100%);
 }
 
 .project-card:nth-child(2) {
-    background: linear-gradient(135deg, var(--nebula-blue) 0%, #2C5B6F 100%);
+    background: linear-gradient(135deg, var(--nebula-purple) 0%, #22195a 100%);
 }
 
 .project-card:hover {
@@ -562,6 +544,31 @@ h1, h2, h3 {
 
 .night-card {
     background: linear-gradient(135deg, #00C4FF 0%, #1E3A8A 100%);
+}
+
+/* ICONS */
+.social-links a {
+    font-size: 2.5rem; 
+    margin: 0 15px;   
+    padding: 10px;    
+    display: inline-block;
+    transition: all 0.3s ease;
+    color: white;     
+}
+
+.social-links a:hover {
+    transform: scale(1.1); 
+    opacity: 0.9;
+}
+
+.social-links a[title="GitHub"]:hover {
+    color: #6e5494; 
+}
+.social-links a[title="Instagram"]:hover {
+    color: #e1306c; 
+}
+.social-links a[title="YouTube"]:hover {
+    color: #ff0000; 
 }
 
 /* Animations */
