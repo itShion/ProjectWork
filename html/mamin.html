@@ -3,15 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed</title>
+    <title>Mamin | Colorful Portfolio</title>
+    <link rel="stylesheet" href="../css/maminStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>Mohammed</h1>
-    </header>
-    <main>
-        <p>
-            Mohammed un componente del gruppo
-        </p>
-    </main>
+    <div class="color-blobs">
+        <div class="blob pink"></div>
+        <div class="blob blue"></div>
+        <div class="blob yellow"></div>
+    </div>
+
+    <nav class="floating-menu">
+        <ul>
+            <li><a href="#home" class="active">HOME</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="fullscreen-section">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="MAMIN">MAMIN</h1>
+            <p class="subtitle">FULL-STACK DEV & MORE </p>
+            <div class="scrolling-banner">
+                <span class="slide-to-left">DEVELOPER — TAEKWONDO — GAMING — ANIME — SPORT — HEALTH — DEVELOPER — TAEKWONDO — GAMING — ANIME — SPORT — HEALTH — DEVELOPER — TAEKWONDO — GAMING — ANIME — SPORT — HEALTH — DEVELOPER — TAEKWONDO — GAMING — ANIME — SPORT — HEALTH — DEVELOPER — TAEKWONDO — GAMING — ANIME — SPORT — HEALTH —</span>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">ABOUT ME</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Commodi sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suspendisse consequat erat volutpat quis nostrud exercitation.</p>
+                    <div class="skills">
+                        <span>CODER</span>
+                        <span>GAMING</span>
+                        <span>ANIME</span>
+                        <span>TAEKWONDO</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="../Medias/robin.png" alt="Profile Photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-title">SELECTED WORK</h2>
+            
+            <div class="project-grid">
+                <div class="project-card" style="background-color: #FF3E9D;">
+                    <div class="project-info">
+                        <h3>DAY</h3>
+                        <p>ITS Olivetti STUDENT</p>
+                    </div>
+                    <div class="project-image">
+                        <img src="../Medias/robin.png" alt="DAY SIDE OF ME">
+                    </div>
+                </div>
+
+                <div class="project-card" style="background-color: #00C4FF;">
+                    <div class="project-info">
+                        <h3>NIGHT</h3>
+                        <p>Taekwondo Athlete
+                            add when hover desprition comes up
+                        </p>
+                    </div>
+                    <div class="project-image">
+                        <img src="../Medias/robin.png" alt="NIGHT SIDE OF ME">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">JOIN THE CLUB</h2>
+            <p class="contact-text">Get in touch for collaborations or just to say hello</p>
+            
+            <div class="contact-methods">
+                <a href="m.aouachi@itsolivetti.it" class="contact-button email">
+                    <i class="fas fa-envelope"></i>
+                    <span>EMAIL ME</span>
+                </a>
+                <div class="social-links">
+                    <a href="#"><span>FB</span></a>
+                    <a href="#"><span>INS</span></a>
+                    <a href="#"><span>TW</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/mamin.js"></script>
 </body>
+</html>
