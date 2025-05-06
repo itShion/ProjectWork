@@ -75,3 +75,8 @@ async function fetchTime() {
 // Initialize and update time
 fetchTime();
 setInterval(fetchTime, 60000);
+
+
+if (!navigator.userAgent.match(/Mobile/)) {
+    document.getElementById('bg-video').src = "video.mp4";
+  }
