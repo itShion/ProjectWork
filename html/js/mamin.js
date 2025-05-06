@@ -69,27 +69,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Mobile touch support
-        card.addEventListener('click', function() {
+        // Mobile touch support - UPDATED for full expansion
+        card.addEventListener('click', function(e) {
             if (window.matchMedia("(hover: none)").matches) {
-                // Close other open cards
+                const isActive = this.classList.contains('active');
+                
+                // Close all cards first
                 document.querySelectorAll('.project-card').forEach(otherCard => {
-                    if (otherCard !== this) {
-                        otherCard.classList.remove('active');
-                    }
+                    otherCard.classList.remove('active');
+                    gsap.to(otherCard, { height: "200px", duration: 0.3 });
                 });
-                // Toggle this card
-                this.classList.toggle('active');
+                
+                // Only open this one if it wasn't already active
+                if (!isActive) {
+                    this.classList.add('active');
+                    // Animate to full content height
+                    const contentHeight = this.querySelector('.hover-content').scrollHeight;
+                    gsap.to(this, { height: contentHeight + "px", duration: 0.3 });
+                } else {
+                    gsap.to(this, { height: "200px", duration: 0.3 });
+                }
+                
+                e.preventDefault();
+                e.stopPropagation();
             }
         });
     });
 
     // Initialize mobile state
     if (window.matchMedia("(hover: none)").matches) {
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.height = "200px";
+        });
         document.querySelectorAll('.hover-content').forEach(content => {
             content.style.display = 'none';
         });
     }
-
-    
 });
