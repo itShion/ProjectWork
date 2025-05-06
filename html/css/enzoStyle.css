@@ -182,6 +182,47 @@ h1, h2 {
   border-radius: 16px;
 }
 
+/* ===== FOOTER ===== */
+
+/* ===== FOOTER STYLE ===== */
+/* FOOTER SEMPLIFICATO */
+.footer {
+  background: linear-gradient(to top, #0a0a0a, transparent);
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--coloreTesto);
+}
+
+.footer-content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-icon {
+  color: var(--colorePrimario);
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: transform 0.3s;
+}
+
+.footer-icon:hover {
+  color: var(--coloreSecondario);
+  transform: scale(1.2);
+}
+
+.footer-title {
+  color: var(--coloreTesto);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.footer-subtitle {
+  margin-bottom: 2vh;
+}
+
 /* ===== DESKTOP (min-width: 769px) ===== */
 @media (min-width: 769px) {
   .menuButton {
@@ -222,4 +263,5 @@ h1, h2 {
     text-align: left;
     max-width: 50%;
   }
+
 }
