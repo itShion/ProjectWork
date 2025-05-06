@@ -16,7 +16,11 @@ Wikipedia per le icone
 
 # Pagina di Ayman
 
+Unsplash
+
 # Pagina di Mohammed
+
+Pinterest
 
 
 # Come funzionano i nostri javascript:
@@ -131,3 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menuIcon.classList.toggle('ri-close-line');
   }
 });
+
+
+# Pagina di Ayman
+
