@@ -25,14 +25,25 @@ body {
     width: 100%;
     height: 100%;
     z-index: -2;
-}
-
-#myVideo {
+    /* Fallback come background */
+    background: url('Medias/background.webm') no-repeat center/cover;
+  }
+  
+  #myVideo {
     width: 100%;
     height: 100%;
     object-fit: cover;
     filter: brightness(0.4);
-}
+    /* Nascondi il video se non supportato */
+    display: block;
+  }
+  
+  /* Disattiva video su mobile se non funziona */
+  @media (hover: none) and (pointer: coarse) {
+    #myVideo {
+      display: none !important;
+    }
+  }
 
 /* ===== NAVIGATION MOBILE  ===== */
 #navigation {

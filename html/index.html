@@ -18,12 +18,19 @@
 <body>
     <!-- Video Background -->
     <div id="video-container">
-        <video autoplay muted loop playsinline preload="auto" id="myVideo">
-            <source src="Medias/background.mp4" type="video/mp4">
-            <!-- Fallback per browser che non supportano video -->
-            <img src="Medias/background-fallback.jpg" alt="Background">
+        <video 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="auto" 
+          id="myVideo"
+          poster="Medias/background-fallback.jpg"
+        >
+          <source src="Medias/background.mp4" type="video/mp4">
+          <!-- Fallback come CSS invece che HTML -->
         </video>
-    </div>
+      </div>
 
     <!-- Navigation -->
     <nav id="navigation">
