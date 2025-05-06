@@ -25,15 +25,20 @@ body {
     width: 100%;
     height: 100%;
     z-index: -2;
-    background: #1d1d1d; /* Colore di fallback */
+    /* Fallback come sfondo */
+    background: url('Medias/background-fallback.jpg') no-repeat center/cover;
   }
   
   #myVideo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Filtro riattivato con approccio mobile-friendly */
+    /* Forza hardware acceleration */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    /* Filtro ottimizzato */
     filter: brightness(0.4);
+    -webkit-filter: brightness(0.4);
   }
   
 
