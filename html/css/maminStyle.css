@@ -1,14 +1,16 @@
 /* Vibrant Color Scheme */
 :root {
-    --pink: #FF3E9D;
-    --blue: #00C4FF;
-    --yellow: #FFDE59;
-    --purple: #8A3FFC;
-    --dark: #111135;
-    --light: #F5F5F5;
+    --nebula-dark: #0A0A2A;
+    --nebula-darker: #05051A;
+    --nebula-blue: #1E3A8A;
+    --nebula-purple: #5B2C6F;
+    --nebula-light: #E0E0FF;
+    --nebula-accent: #7FDBFF;
+    --nebula-pink: #9D4EDD;
     --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     --shine-angle: 90deg;
     --shine-position: -50%;
+
 }
 
 * {
@@ -18,10 +20,8 @@
 }
 
 body {
-    font-family: 'Space Grotesk', sans-serif;
-    background-color: var(--light);
-    color: var(--dark);
-    overflow-x: hidden;
+    background-color: var(--nebula-darker);
+    color: var(--nebula-light);
 }
 
 h1, h2, h3 {
@@ -53,33 +53,22 @@ h1, h2, h3 {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.2;
+    animation: nebula-pulse 15s infinite ease-in-out;
 }
 
 .blob.pink {
-    background: var(--pink);
-    width: 500px;
-    height: 500px;
-    top: -200px;
-    left: -200px;
-    animation: float 15s infinite alternate;
+    background: var(--nebula-purple);
+    opacity: 0.15;
 }
 
 .blob.blue {
-    background: var(--blue);
-    width: 600px;
-    height: 600px;
-    bottom: -200px;
-    right: -200px;
-    animation: float 18s infinite alternate-reverse;
+    background: var(--nebula-blue);
+    opacity: 0.15;
 }
 
 .blob.yellow {
-    background: var(--yellow);
-    width: 400px;
-    height: 400px;
-    top: 50%;
-    left: 30%;
-    animation: float 12s infinite alternate;
+    background: var(--nebula-accent);
+    opacity: 0.1;
 }
 
 /* Floating Menu */
@@ -88,10 +77,10 @@ h1, h2, h3 {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255,255,255,0.9);
+    background: rgba(10, 10, 42, 0.8);
     padding: 20px 40px;
     border-radius: 50px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(126, 214, 255, 0.1);
     z-index: 100;
     backdrop-filter: blur(10px);
 }
@@ -104,7 +93,7 @@ h1, h2, h3 {
 
 .floating-menu a {
     text-decoration: none;
-    color: var(--dark);
+    color: var(--nebula-light);
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 2px;
@@ -119,7 +108,7 @@ h1, h2, h3 {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--nebula-accent);
     transition: var(--transition);
 }
 
@@ -147,14 +136,14 @@ h1, h2, h3 {
 
 .glitch {
     position: relative;
-    color: var(--dark);
+    color: var(--nebula-light);
 }
 
 .glitch::before {
     content: attr(data-text);
     position: absolute;
     left: -2px;
-    text-shadow: 2px 0 var(--pink);
+    text-shadow: 2px 0 var(--nebula-pink);
     clip: rect(0, 900px, 0, 0);
     animation: glitch-anim 2s infinite linear alternate-reverse;
 }
@@ -182,7 +171,7 @@ h1, h2, h3 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 3px;
-    color: rgba(10,10,20,0.5);
+    color: rgba(224, 224, 255, 0.3);
 }
 .slide-to-left{
     animation: scroll 1s infinite linear;
@@ -295,8 +284,8 @@ h1, h2, h3 {
 }
 
 .skills span {
-    background: var(--dark);
-    color: white;
+    background: var(--nebula-light);
+    color: var(--nebula-darker);
     padding: 10px 20px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -335,8 +324,8 @@ h1, h2, h3 {
 }
 
 .contact-button.email {
-    background: var(--dark);
-    color: white;
+    background: var(--nebula-light);
+    color: var(--nebula-darker);
 }
 
 .contact-button:hover {
@@ -350,7 +339,7 @@ h1, h2, h3 {
 }
 
 .social-links a {
-    color: var(--dark);
+    color: var(--nebula-light);
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 2px;
@@ -364,7 +353,7 @@ h1, h2, h3 {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--pink);
+    background: var(--nebula-accent);
     transition: var(--transition);
 }
 
@@ -376,27 +365,27 @@ h1, h2, h3 {
     position: relative;
     overflow: hidden;
     transition: var(--transition);
+    border: 1px solid rgba(126, 214, 255, 0.1);
 }
 
 .project-card::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(255,255,255,0) 0%,
-        rgba(255,255,255,0.3) 50%,
-        rgba(255,255,255,0) 100%
+    background: radial-gradient(
+        circle at var(--shine-position) var(--shine-position),
+        rgba(126, 214, 255, 0.1) 0%,
+        transparent 70%
     );
+    opacity: 0;
     transition: var(--transition);
-    z-index: 1;
 }
 
 .project-card:hover::before {
-    left: 100%;
+    opacity: 1;
 }
 
 .project-info {
@@ -406,16 +395,53 @@ h1, h2, h3 {
 
 /* Enhanced Color Contrast */
 .project-card:nth-child(1) {
-    background: linear-gradient(135deg, #FF3E9D 0%, #8A3FFC 100%);
+    background: linear-gradient(135deg, var(--nebula-purple) 0%, #3A1E8A 100%);
 }
 
 .project-card:nth-child(2) {
-    background: linear-gradient(135deg, #00C4FF 0%, #0066FF 100%);
+    background: linear-gradient(135deg, var(--nebula-blue) 0%, #2C5B6F 100%);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(126, 214, 255, 0.1);
+}
+
+/* Styles for stars */
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+}
+
+.stars::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 
+        10vw 10vh 1px 1px white,
+        30vw 20vh 1px 1px white,
+        80vw 30vh 1px 1px white,
+        90vw 80vh 1px 1px white,
+        /* Add more star positions as needed */;
+    animation: twinkle 5s infinite alternate;
+}
+
+.stars.small::before {
+    width: 1px;
+    height: 1px;
+    box-shadow: 
+        15vw 15vh 1px 1px white,
+        25vw 25vh 1px 1px white,
+        /* Add more small star positions */;
+    animation: twinkle 3s infinite alternate-reverse;
 }
 
 /* Animations */
@@ -437,6 +463,19 @@ h1, h2, h3 {
     60% { clip: rect(70px, 9999px, 30px, 0); }
     80% { clip: rect(90px, 9999px, 60px, 0); }
     100% { clip: rect(85px, 9999px, 40px, 0); }
+}
+
+/* Stars animation */
+@keyframes twinkle {
+    0% { opacity: 0.2; }
+    100% { opacity: 1; }
+}
+
+/* Add nebula pulse animation */
+@keyframes nebula-pulse {
+    0% { transform: scale(1); opacity: 0.1; }
+    50% { transform: scale(1.1); opacity: 0.15; }
+    100% { transform: scale(1); opacity: 0.1; }
 }
 
 /* Responsive Design */

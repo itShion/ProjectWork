@@ -37,20 +37,31 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // Remove the existing project card hover effect and replace with:
-const projectCards = document.querySelectorAll('.project-card');
-let isAnimating = false;
-
-projectCards.forEach(card => {
-    // Reset shine position when not hovering
-    card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-            '--shine-position': '100%',
-            duration: 0.4
+    // Enhance blob animations
+    const blobs = document.querySelectorAll('.blob');
+    blobs.forEach(blob => {
+        gsap.to(blob, {
+            x: Math.random() * 100 - 50,
+            y: Math.random() * 100 - 50,
+            duration: 20 + Math.random() * 10,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut"
         });
     });
-    
+    // Remove the existing project card hover effect and replace with:
+    const projectCards = document.querySelectorAll('.project-card');
+    let isAnimating = false;
+
+    projectCards.forEach(card => {
+        // Reset shine position when not hovering
+        card.addEventListener('mouseleave', () => {
+            gsap.to(card, {
+                '--shine-position': '100%',
+                duration: 0.4
+            });
+        });
+        
     // Track mouse position for dynamic shine
     card.addEventListener('mousemove', (e) => {
         if (isAnimating) return;
