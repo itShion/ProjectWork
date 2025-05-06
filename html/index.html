@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonten</title>
+    <title>B Y D</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
@@ -17,11 +17,10 @@
 </head>
 <body>
     <div id="video-container">
-        <video autoplay muted loop playsinline preload="auto" id="myVideo"
-          poster="Medias/poster.jpg"
-          webkit-playsinline x-webkit-airplay="allow"
-          style="display:block"> <!-- Forza rendering -->
-          <source src="Medias/background.mp4#t=0.1" type="video/mp4"> <!-- #t=0.1 trick per iOS -->
+        <video autoplay muted loop playsinline preload="auto" id="myVideo">
+            <source src="Medias/background.mp4" type="video/mp4">
+            <!-- Fallback per browser che non supportano video -->
+            <img src="Medias/background-fallback.jpg" alt="Background">
         </video>
       </div>
 
