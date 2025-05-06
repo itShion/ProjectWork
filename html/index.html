@@ -16,21 +16,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- Video Background -->
     <div id="video-container">
-        <video 
-        autoplay 
-        muted 
-        loop 
-        playsinline 
-        preload="metadata"
-        id="myVideo"
-        poster="Medias/background.webm"
-        >
-        <source src="Medias/background.mp4" type="video/mp4">
-        <!-- Fallback -->
+        <video autoplay muted loop playsinline preload="auto" id="myVideo"
+          poster="Medias/poster.jpg"
+          webkit-playsinline x-webkit-airplay="allow"
+          style="display:block"> <!-- Forza rendering -->
+          <source src="Medias/background.mp4#t=0.1" type="video/mp4"> <!-- #t=0.1 trick per iOS -->
         </video>
-
       </div>
 
     <!-- Navigation -->
