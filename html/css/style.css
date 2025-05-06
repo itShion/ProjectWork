@@ -5,12 +5,15 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: rgb(230, 230, 230);
     min-height: 100vh;
     min-width: 100%;
-
     overflow-x: hidden;
 }
 
@@ -50,8 +53,14 @@ body {
     width: 60px;
     height: auto;
     transition: transform 0.3s;
+
 }
 
+.nav-brand img {
+    width: 60px;
+    height: auto;
+    margin-left: -1rem;
+}
 .nav-brand:hover {
     transform: scale(1.05);
 }
@@ -72,6 +81,11 @@ body {
     text-align: center;
 }
 
+
+#navigation ul.show {
+    display: flex;
+}
+
 #navigation li {
     padding: 12px 0;
     transition: all 0.3s;
@@ -87,6 +101,7 @@ body {
     font-size: 14px;
     letter-spacing: 1px;
     padding: 5px 15px;
+    display: block;
 }
 
 /* === stile del time === */
@@ -104,21 +119,29 @@ body {
 
 }
 
+.time-display:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+  
+
 /* ===== MAIN CONTENT ===== */
 #Main {
+    top: 0;
     height: 100vh;
     width: 100wv;
     overflow: hidden;
     flex-direction: column;
     justify-content: center;
 
-    background: linear-gradient(to top, whitesmoke 0%, rgba(255,255,255,0) 50%);
     height: 100vh;
     display: flex;
     align-items: center;
     text-align: center;
 
-    scroll-margin-top: 100vh;
+    background: linear-gradient(to top, #f0f0f0 0%, rgba(255,255,255,0) 50%);
+
 }
 
 .Welcome {
@@ -177,7 +200,6 @@ body {
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    width: 100%;
   }
   
   .testo {
@@ -273,6 +295,17 @@ img {
 }
 
 /* Effetto Hover */
+.box img {
+    transition: transform 0.5s ease, filter 0.5s ease, border-radius 0.5s ease;
+    transform: scale(0.9);
+    border-radius: 20px;
+}
+
+.box .overlay {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
 .box:hover img {
     transform: scale(1.2);
     filter: brightness(0.5);
@@ -281,15 +314,6 @@ img {
 
 .box:hover .overlay {
     opacity: 1;
-}
-
-.box:not(:hover) img {
-    transform: scale(0.9);
-    border-radius: 20px;
-}
-
-.box:not(:hover) .overlay {
-    opacity: 0;
 }
 
 /* rimozione dello scrollbar */
@@ -322,15 +346,63 @@ img {
     text-align: center;
     margin-bottom: 30px;
     font-size: clamp(24px, 3vw, 36px);
-    color: #222;
+    color: whitesmoke;
 }
 
-/* ===== Roba di Mamin ===== */
-#features {
-    padding: 60px 20px;
-    background-color: blueviolet;
-    color: white;
+/* Footer */
+
+footer{
+    background-color: rgb(12, 12, 12)
 }
+
+.f-container{
+    width: 100%;
+    padding : 40px 30px 20px;
+}
+
+.icone{
+    display: flex;
+    justify-content: center;;
+}
+
+.icone a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.icone a i{
+    font-size: 2em;
+    color : black;
+    opacity: 0.9;
+}
+
+/* Colora le icone  */
+.icone .fa-github {
+    color: #333;
+  }
+  
+  .icone .fa-linkedin {
+    color: #0077B5;
+  }
+  
+  .icone .fa-instagram {
+    color: #E1306C;
+  }
+  
+  .icone .fa-youtube {
+    color: #FF0000;
+  }
+
+
+  .f-container h3 {
+    color: whitesmoke;
+    text-align: center;
+  }
+  
+
 
 /* ===== MEDIA QUERIES (TABLET) ===== */
 @media screen and (min-width: 768px) {
@@ -377,11 +449,24 @@ img {
     .box {
         margin-left: 3vw;
     }
-
 }
 
 /* ===== MEDIA QUERIES (DESKTOP) ===== */
+
 @media screen and (min-width: 1024px) {
+
+    #navigation ul {
+        display: flex;
+        position: static;
+        background: rgba(155, 155, 155, 0.09);
+        padding: 10px 20px;
+        width: auto;
+    }
+
+    .time-display.nav-toggle {
+        display: none;
+    }
+
     #navigation {
         padding: 25px 60px;
     }
@@ -393,7 +478,7 @@ img {
 
     .Welcome {
         margin: 0;
-        margin-left: 39vh;
+        margin-left: 10vh;
         margin-bottom: 25vh;
         text-align: left; 
     }
@@ -454,4 +539,3 @@ img {
         margin-left: 3vw;
     }
 }
-
